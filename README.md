@@ -1,16 +1,10 @@
 # flutter_webview3
 
-A new Flutter project.
+本專案利用InAppWebview套件與其他Flutter專案打包的H5做交互
 
-## Getting Started
+## Warning
 
-This project is a starting point for a Flutter application.
+- 務必將url換成自己的網域地址
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Flutter Link
+[Flutter打包成H5專案地址](https://github.com/ctes930013/WebivewJs)
