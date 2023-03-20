@@ -96,6 +96,18 @@ class _MyHomePageState extends State<MyHomePage> {
           //傳值給web端
           String code = "window.receiveData('$url')";
           controller.evaluateJavascript(source: code).then((result) {});
+          //傳list map給web端
+          Map<String, dynamic> map1 = {
+            "key": "122",
+            "value": "ssss",
+          };
+          Map map2 = {
+            "key": "taiwan",
+            "value": "mmm",
+          };
+          List<Map> param = [map1, map2];
+          String code2 = "window.receiveListMapData('$param')";
+          controller.evaluateJavascript(source: code2).then((result) {});
         },
       );
     return _controller;
