@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
@@ -97,17 +99,25 @@ class _MyHomePageState extends State<MyHomePage> {
           String code = "window.receiveData('$url')";
           controller.evaluateJavascript(source: code).then((result) {});
           //傳list map給web端
-          Map<String, dynamic> map1 = {
+          Map<String, String> map1 = {
             "key": "122",
             "value": "ssss",
           };
-          Map map2 = {
+          Map<String, String> map2 = {
             "key": "taiwan",
             "value": "mmm",
           };
-          List<Map> param = [map1, map2];
-          String code2 = "window.receiveListMapData('$param')";
+          List<String> param = [
+            "'${json.encode(map1)}'",
+            "'${json.encode(map2)}'"
+          ];
+          print(param.toString());
+          String code2 = "window.receiveListMapData($param)";
           controller.evaluateJavascript(source: code2).then((result) {});
+          //傳int給web端
+          int id = 100;
+          String code3 = "window.receiveIntData($id)";
+          controller.evaluateJavascript(source: code3).then((result) {});
         },
       );
     return _controller;
